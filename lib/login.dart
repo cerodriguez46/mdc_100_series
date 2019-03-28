@@ -97,6 +97,9 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text('NEXT'),
                   onPressed: () {
                     // TODO: Show the next page (101)
+                    //Navigator manages moving through the stack, pop removes it form the stack
+                    Navigator.pop(context);
+                    //Additional buttons include Outline button, Floating action button, icon button, and more
                   },
                 ),
               ],
