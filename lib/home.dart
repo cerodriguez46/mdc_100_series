@@ -17,6 +17,7 @@ import 'package:intl/intl.dart';
 
 import 'model/products_repository.dart';
 import 'model/product.dart';
+import 'colors.dart';
 
 class HomePage extends StatelessWidget {
   // TODO: Make a collection of cards (102)
@@ -139,7 +140,34 @@ class HomePage extends StatelessWidget {
           children: _buildGridCards(context) // Replace
 
 
+
       ),
+
+
     );
   }
+
+
+}
+
+//build the shrine theme
+final ThemeData _kShrineTheme = _buildShrineTheme();
+
+ThemeData _buildShrineTheme() {
+  final ThemeData base = ThemeData.light();
+  return base.copyWith(
+    accentColor: kShrineBrown900,
+    primaryColor: kShrinePink100,
+    buttonTheme: base.buttonTheme.copyWith(
+      buttonColor: kShrinePink100,
+      textTheme: ButtonTextTheme.normal,
+    ),
+    scaffoldBackgroundColor: kShrineBackgroundWhite,
+    cardColor: kShrineBackgroundWhite,
+    textSelectionColor: kShrinePink100,
+    errorColor: kShrineErrorRed,
+    // TODO: Add the text themes (103)
+    // TODO: Add the icon themes (103)
+    // TODO: Decorate the inputs (103)
+  );
 }
