@@ -63,9 +63,46 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+
       // TODO: Add a grid view (102)
-      body: Center(
-        child: Text('You did it!'),
+      //Need the gridview to make cards
+      //count method is used because number of items is not infinite
+      body: GridView.count(
+        //axis count is number of columns
+        crossAxisCount: 2,
+        //determines padding
+        padding: EdgeInsets.all(16.0),
+        //determiens size based on an aspect ratio
+        childAspectRatio: 8.0 / 9.0,
+
+
+        // TODO: Build a grid of cards (102)
+        children: <Widget>[Card(
+          clipBehavior: Clip.antiAlias,
+          //collumn widget lays out children vertically
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              AspectRatio(
+                aspectRatio: 18.0 / 11.0,
+                child: Image.asset('assets/diamond.png'),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text('Title'),
+                    SizedBox(height: 8.0),
+                    Text('Secondary Text'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        )
+        ],
+
       ),
     );
   }
