@@ -97,6 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                 //This creates a raised button with text Next
                 RaisedButton(
                   child: Text('NEXT'),
+                  elevation: 8.0,
                   onPressed: () {
                     // TODO: Show the next page (101)
                     //Navigator manages moving through the stack, pop removes it form the stack
