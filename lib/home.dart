@@ -21,8 +21,25 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: Return an AsymmetricView (104)
     // TODO: Pass Category variable to AsymmetricView (104)
+    //scaffold allows us to do material components such as app bar, drawers, snackbars, and bottom sheets
     return Scaffold(
       // TODO: Add app bar (102)
+      //this adds an app bar or navigation bar in ios
+      appBar: AppBar(
+        // TODO: Add buttons and title (102)
+        //icon for menu added but put before it will put before text
+        leading: IconButton(
+          icon: Icon(
+            Icons.menu,
+            semanticLabel: 'menu',
+          ),
+          onPressed: () {
+            print('Menu button');
+          },
+        ),
+        //this adds the title to the app bar
+        title: Text('SHRINE'),
+      ),
       // TODO: Add a grid view (102)
       body: Center(
         child: Text('You did it!'),
