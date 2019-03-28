@@ -16,6 +16,41 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   // TODO: Make a collection of cards (102)
+  //function that creates as many cards as we want and returns them
+  //functions starting with an underscore are private api
+  List<Card> _buildGridCards(int count) {
+    List<Card> cards = List.generate(
+      count,
+          (int index) =>
+          Card(
+            clipBehavior: Clip.antiAlias,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                AspectRatio(
+                  aspectRatio: 18.0 / 11.0,
+                  child: Image.asset('assets/diamond.png'),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text('Title'),
+                      SizedBox(height: 8.0),
+                      Text('Secondary Text'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+    );
+
+    return cards;
+  }
+
+
   // TODO: Add a variable for Category (104)
   @override
   Widget build(BuildContext context) {
@@ -68,40 +103,11 @@ class HomePage extends StatelessWidget {
       //Need the gridview to make cards
       //count method is used because number of items is not infinite
       body: GridView.count(
-        //axis count is number of columns
-        crossAxisCount: 2,
-        //determines padding
-        padding: EdgeInsets.all(16.0),
-        //determiens size based on an aspect ratio
-        childAspectRatio: 8.0 / 9.0,
+          crossAxisCount: 2,
+          padding: EdgeInsets.all(16.0),
+          childAspectRatio: 8.0 / 9.0,
+          children: _buildGridCards(10) // Replace
 
-
-        // TODO: Build a grid of cards (102)
-        children: <Widget>[Card(
-          clipBehavior: Clip.antiAlias,
-          //collumn widget lays out children vertically
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              AspectRatio(
-                aspectRatio: 18.0 / 11.0,
-                child: Image.asset('assets/diamond.png'),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text('Title'),
-                    SizedBox(height: 8.0),
-                    Text('Secondary Text'),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        )
-        ],
 
       ),
     );
