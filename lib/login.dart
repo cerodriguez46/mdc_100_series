@@ -80,10 +80,14 @@ class _LoginPageState extends State<LoginPage> {
             //Button bar arranges buttons in a row
             ButtonBar(
               // TODO: Add a beveled rectangular border to CANCEL (103)
+
               children: <Widget>[
                 //This creates a flat button with text cancel
                 FlatButton(
                   child: Text('CANCEL'),
+                  shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                  ),
                   //onPressed on empty leaves the buttons able to be selected
                   onPressed: () {
                     // TODO: Clear the text fields (101)
@@ -94,9 +98,13 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 // TODO: Add an elevation to NEXT (103)
                 // TODO: Add a beveled rectangular border to NEXT (103)
+
                 //This creates a raised button with text Next
                 RaisedButton(
                   child: Text('NEXT'),
+                  shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                  ),
                   elevation: 8.0,
                   onPressed: () {
                     // TODO: Show the next page (101)
