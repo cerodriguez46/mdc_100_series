@@ -68,7 +68,10 @@ ThemeData _buildShrineTheme() {
     textSelectionColor: kShrinePink100,
     errorColor: kShrineErrorRed,
 
-
+    //Text theme with Rubik applied here
+    textTheme: _buildShrineTextTheme(base.textTheme),
+    primaryTextTheme: _buildShrineTextTheme(base.primaryTextTheme),
+    accentTextTheme: _buildShrineTextTheme(base.accentTextTheme),
     // TODO: Add the icon themes (103)
     // TODO: Decorate the inputs (103)
   );
