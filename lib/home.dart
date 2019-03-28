@@ -39,6 +39,29 @@ class HomePage extends StatelessWidget {
         ),
         //this adds the title to the app bar
         title: Text('SHRINE'),
+
+        //Added trailing buttons called actions or specifically for settings
+        //as well as search icon
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              semanticLabel: 'search',
+            ),
+            onPressed: () {
+              print('Search button');
+            },
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.tune,
+              semanticLabel: 'filter',
+            ),
+            onPressed: () {
+              print('Filter button');
+            },
+          ),
+        ],
       ),
       // TODO: Add a grid view (102)
       body: Center(
