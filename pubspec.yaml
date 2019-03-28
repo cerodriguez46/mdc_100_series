@@ -54,7 +54,7 @@ flutter:
     - packages/shrine_images/34-0.jpg
     - packages/shrine_images/35-0.jpg
     - packages/shrine_images/36-0.jpg
-  fonts: //new rubik font added here
+  fonts:
   - family: Rubik
     fonts:
     - asset: fonts/Rubik-Regular.ttf
