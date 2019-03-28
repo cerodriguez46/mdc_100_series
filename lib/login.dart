@@ -21,6 +21,11 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   // TODO: Add text editing controllers (101)
+  //this controlls the text of the TextFields
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,24 +46,63 @@ class _LoginPageState extends State<LoginPage> {
             // TODO: Remove filled: true values (103)
             // TODO: Wrap Password with AccentColorOverride (103)
             // TODO: Add TextField widgets (101)
-// [Name]
+
+            //this is the text field like an edit text for username
+            //can easily be changed by changing inputdecoration value
+            //automatically comes with ripple ink well
             TextField(
+              //TextField controller declared here
+              controller: _usernameController,
+              //this means it takes in an input decoration widget
               decoration: InputDecoration(
+                //filled means its lightly filled in to help people identify where to touch
                 filled: true,
                 labelText: 'Username',
               ),
             ),
 // spacer
             SizedBox(height: 12.0),
-// [Password]
+
+            //text field for password
             TextField(
+              controller: _passwordController,
               decoration: InputDecoration(
                 filled: true,
                 labelText: 'Password',
               ),
+              //obscure text automatically replaces what user enters with bullets
               obscureText: true,
             ),
-            // TODO: Add button bar (101)
+
+
+            //Button bar arranges buttons in a row
+            ButtonBar(
+              // TODO: Add a beveled rectangular border to CANCEL (103)
+              children: <Widget>[
+                //This creates a flat button with text cancel
+                FlatButton(
+                  child: Text('CANCEL'),
+                  //onPressed on empty leaves the buttons able to be selected
+                  onPressed: () {
+                    // TODO: Clear the text fields (101)
+                    //utilizes text controllers to clear the fields when pressed
+                    _usernameController.clear();
+                    _passwordController.clear();
+                  },
+                ),
+                // TODO: Add an elevation to NEXT (103)
+                // TODO: Add a beveled rectangular border to NEXT (103)
+                //This creates a raised button with text Next
+                RaisedButton(
+                  child: Text('NEXT'),
+                  onPressed: () {
+                    // TODO: Show the next page (101)
+                  },
+                ),
+              ],
+            ),
+
+
           ],
         ),
       ),
